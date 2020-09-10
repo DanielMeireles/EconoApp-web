@@ -9,8 +9,8 @@ export default createGlobalStyle`
   }
 
   body {
-    background-color: '#312E38';
-    color: '#F4EDE8';
+    background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.primaryText};
     -webkit-font-smoothing: antialiased;
   }
 
