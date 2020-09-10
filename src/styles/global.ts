@@ -1,44 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
-  :root {
-    font-size: 60%;
-
-    --color-background: '#312E38';
-
-    --color-headerBackground: '#28262E';
-    --color-headerPrimaryText: '#27AE60';
-    --color-headerSecondaryText: '999591';
-    --color-headerElement: '#27AE60';
-
-    --color-inputBackground: '#232129';
-    --color-inputText: '#F4EDE8';
-    --color-inputPlaceholder: '#666360';
-    --color-inputIcon: '#666360';
-    --color-inputFocused: '#27ae60';
-    --color-inputError: '#c53030';
-
-    --color-cardBackground: '#3E3B47';
-    --color-cardTitle: '#F4EDE8';
-    --color-cardText: '#999591';
-    --color-cardElement: '#27ae60';
-
-    --color-primaryText: '#F4EDE8';
-    --color-secondaryText: '#27ae60';
-    --color-tertiaryText: '#666360';
-
-    --color-buttonBackground: '#27ae60';
-    --color-buttonText: '#312E38';
-    --color-buttonIcon: '#312E38';
-
-    --color-calendarPrimary: '#3E3B47';
-    --color-calendarSecondary: '#28262E';
-    --color-calendarSelected: '#27ae60';
-    --color-calendarTextPrimary: '#F4EDE8';
-    --color-calendarTextSecondary: '#666360';
-    --color-calendarTextSelected: '#28262E';
-  }
-
   * {
     margin:0;
     padding: 0;
@@ -47,8 +9,8 @@ export default createGlobalStyle`
   }
 
   body {
-    background-color: var(--color-background);
-    color: var(--color-primaryText);
+    background-color: '#312E38';
+    color: '#F4EDE8';
     -webkit-font-smoothing: antialiased;
   }
 
