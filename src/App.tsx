@@ -12,12 +12,11 @@ import AppProvider from './hooks';
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={defaultTheme}>
+      <GlobalStyle />
       <BrowserRouter>
         <AppProvider>
           <Routes />
         </AppProvider>
-
-        <GlobalStyle />
       </BrowserRouter>
     </ThemeProvider>
   );

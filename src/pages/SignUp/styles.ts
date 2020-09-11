@@ -4,6 +4,7 @@ import { shade } from 'polished';
 // import signUpBackgroundImg from '../../assets/sign-up-background.png';
 
 export const Container = styled.div`
+  font-family: 'Poppins';
   height: 100vh;
 
   display: flex;
