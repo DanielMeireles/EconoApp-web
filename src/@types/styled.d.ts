@@ -15,6 +15,13 @@ declare module 'styled-components' {
       tooltipBackground: string;
       tooltipText: string;
 
+      toastInfoBackground: string;
+      toastInfoText: string;
+      toastSuccessBackground: string;
+      toastSuccessText: string;
+      toastErrorBackground: string;
+      toastErrorText: string;
+
       inputBackground: string;
       inputText: string;
       inputPlaceholder: string;

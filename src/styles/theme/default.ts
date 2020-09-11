@@ -14,6 +14,13 @@ const defaultTheme: DefaultTheme = {
     tooltipBackground: '#27ae60',
     tooltipText: '#F4EDE8',
 
+    toastInfoBackground: '#ebf8ff',
+    toastInfoText: '#3172b7',
+    toastSuccessBackground: '#e6fffa',
+    toastSuccessText: '#2e656a',
+    toastErrorBackground: '#fddede',
+    toastErrorText: '#c53030',
+
     inputBackground: '#232129',
     inputText: '#F4EDE8',
     inputPlaceholder: '#666360',
