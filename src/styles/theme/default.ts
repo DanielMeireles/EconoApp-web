@@ -11,6 +11,9 @@ const defaultTheme: DefaultTheme = {
     headerSecondaryText: '999591',
     headerElement: '#27AE60',
 
+    tooltipBackground: '#27ae60',
+    tooltipText: '#F4EDE8',
+
     inputBackground: '#232129',
     inputText: '#F4EDE8',
     inputPlaceholder: '#666360',

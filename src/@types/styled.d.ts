@@ -12,6 +12,9 @@ declare module 'styled-components' {
       headerSecondaryText: string;
       headerElement: string;
 
+      tooltipBackground: string;
+      tooltipText: string;
+
       inputBackground: string;
       inputText: string;
       inputPlaceholder: string;
