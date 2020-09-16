@@ -15,7 +15,6 @@ export default createGlobalStyle`
   }
 
   border-style, input, button {
-    font-family: 'Poppins';
     font-size: 16px;
   }
 

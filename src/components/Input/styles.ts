@@ -68,7 +68,7 @@ export const Error = styled(Tooltip)`
 
   span {
     background: ${({ theme }) => theme.colors.inputError};
-    color: ${({ theme }) => theme.colors.inputError};
+    color: ${({ theme }) => theme.colors.tooltipText};
 
     &::before {
       border-color: ${({ theme }) => theme.colors.inputError} transparent;
