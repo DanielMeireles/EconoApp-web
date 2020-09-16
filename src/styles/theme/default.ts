@@ -9,6 +9,7 @@ const defaultTheme: DefaultTheme = {
     headerBackground: '#28262E',
     headerPrimaryText: '#27AE60',
     headerSecondaryText: '999591',
+    headerTertiaryText: '#666360',
     headerElement: '#27AE60',
 
     tooltipBackground: '#27ae60',
