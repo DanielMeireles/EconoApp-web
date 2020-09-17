@@ -15,7 +15,7 @@ export const Container = styled.div<ContainerProps>`
   width: 100%;
 
   border: 2px solid ${({ theme }) => theme.colors.inputBackground};
-  color: #${({ theme }) => theme.colors.inputText};
+  color: ${({ theme }) => theme.colors.inputText};
 
   display: flex;
   align-items: center;
@@ -55,6 +55,11 @@ export const Container = styled.div<ContainerProps>`
   }
 
   svg {
+    ${(props) =>
+      props.isErrored &&
+      css`
+        color: ${({ theme }) => theme.colors.inputError};
+      `}
     margin-right: 16px;
   }
 `;
