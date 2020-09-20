@@ -16,13 +16,7 @@ const Dashboard: React.FC = () => {
         <HeaderContent>
           <img src={logoImg} alt="Logo EconoApp" />
           <HeaderProfile>
-            <img
-              src={
-                user.avatar_url ||
-                'https://api.adorable.io/avatars/56/abott@adorable.io.png'
-              }
-              alt={user.name}
-            />
+            <img src={user.avatar_url} alt={user.name} />
 
             <div>
               <span>Bem-vindo,</span>

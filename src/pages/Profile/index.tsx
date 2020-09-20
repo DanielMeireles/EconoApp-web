@@ -147,13 +147,7 @@ const Profile: React.FC = () => {
           onSubmit={handleSubmit}
         >
           <AvatarInput>
-            <img
-              src={
-                user.avatar_url ||
-                'https://api.adorable.io/avatars/186/abott@adorable.io.png'
-              }
-              alt={user.name}
-            />
+            <img src={user.avatar_url} alt={user.name} />
             <label htmlFor="avatar">
               <FiCamera size={20} />
               <input
