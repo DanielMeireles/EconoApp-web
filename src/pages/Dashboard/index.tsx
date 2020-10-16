@@ -27,6 +27,8 @@ import logoImg from '../../assets/logo.svg';
 import { useAuth } from '../../hooks/auth';
 import api from '../../services/api';
 
+import ShoppingListCard from '../../components/ShoppingListCard';
+
 export interface ShoppingList {
   id: string;
   name: string;
@@ -87,28 +89,12 @@ const Dashboard: React.FC = () => {
         <ShoppingLists>
           <ShoppingListsTitle>Listas de Compras</ShoppingListsTitle>
           {shoppingLists.map((shoppingList) => (
-            <ShoppingListContainer
+            <div
               onClick={() =>
-                setShoppingListItemsVisible(!shoppingListItemsVisible)
-              }
+                setShoppingListItemsVisible(!shoppingListItemsVisible)}
             >
-              <ShoppingListImage src={shoppingList.image_url} />
-              <ShoppingListInfo>
-                <ShoppingListName>{shoppingList.name}</ShoppingListName>
-                <ShoppingListMeta>
-                  <Calendar size={20} />
-                  <ShoppingListMetaText>
-                    {format(new Date(shoppingList.date), 'dd/MM/yyyy')}
-                  </ShoppingListMetaText>
-                </ShoppingListMeta>
-                <ShoppingListMeta>
-                  <Info size={20} />
-                  <ShoppingListMetaText>
-                    {shoppingList.description}
-                  </ShoppingListMetaText>
-                </ShoppingListMeta>
-              </ShoppingListInfo>
-            </ShoppingListContainer>
+              <ShoppingListCard shoppingList={shoppingList} />
+            </div>
           ))}
         </ShoppingLists>
         {shoppingListItemsVisible && (
