@@ -66,10 +66,10 @@ export const HeaderProfile = styled.div`
   }
 `;
 
-export const ShoppingListsTitle = styled.h1`
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: ${({ theme }) => theme.colors.primaryText};
+export const ContainerData = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 `;
 
 export const ShoppingLists = styled.div`
@@ -77,6 +77,13 @@ export const ShoppingLists = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 15px;
+  width: 400px;
+`;
+
+export const ShoppingListsTitle = styled.h1`
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: ${({ theme }) => theme.colors.primaryText};
 `;
 
 export const ShoppingListContainer = styled.div`
@@ -127,4 +134,12 @@ export const ShoppingListMetaText = styled.span`
   margin-left: 8px;
   margin-top: 4px;
   color: ${({ theme }) => theme.colors.cardText};
+`;
+
+export const ShoppingListItems = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  width: 400px;
 `;

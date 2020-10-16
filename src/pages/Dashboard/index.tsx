@@ -9,6 +9,7 @@ import {
   Header,
   HeaderContent,
   HeaderProfile,
+  ContainerData,
   ShoppingListsTitle,
   ShoppingLists,
   ShoppingListContainer,
@@ -19,6 +20,7 @@ import {
   Info,
   ShoppingListMeta,
   ShoppingListMetaText,
+  ShoppingListItems,
 } from './styles';
 
 import logoImg from '../../assets/logo.svg';
@@ -38,6 +40,10 @@ const Dashboard: React.FC = () => {
   const { signOut, user } = useAuth();
 
   const [shoppingLists, setShoppingLists] = useState<ShoppingList[]>([]);
+
+  const [shoppingListItemsVisible, setShoppingListItemsVisible] = useState(
+    false,
+  );
 
   const handleGetShoppingLists = useCallback(() => {
     api.get('/shoppinglists').then((response) => {
@@ -77,29 +83,40 @@ const Dashboard: React.FC = () => {
           </button>
         </HeaderContent>
       </Header>
-      <ShoppingLists>
-        <ShoppingListsTitle>Listas de Compras</ShoppingListsTitle>
-        {shoppingLists.map((shoppingList) => (
-          <ShoppingListContainer>
-            <ShoppingListImage src={shoppingList.image_url} />
-            <ShoppingListInfo>
-              <ShoppingListName>{shoppingList.name}</ShoppingListName>
-              <ShoppingListMeta>
-                <Calendar size={20} />
-                <ShoppingListMetaText>
-                  {format(new Date(shoppingList.date), 'dd/MM/yyyy')}
-                </ShoppingListMetaText>
-              </ShoppingListMeta>
-              <ShoppingListMeta>
-                <Info size={20} />
-                <ShoppingListMetaText>
-                  {shoppingList.description}
-                </ShoppingListMetaText>
-              </ShoppingListMeta>
-            </ShoppingListInfo>
-          </ShoppingListContainer>
-        ))}
-      </ShoppingLists>
+      <ContainerData>
+        <ShoppingLists>
+          <ShoppingListsTitle>Listas de Compras</ShoppingListsTitle>
+          {shoppingLists.map((shoppingList) => (
+            <ShoppingListContainer
+              onClick={() =>
+                setShoppingListItemsVisible(!shoppingListItemsVisible)
+              }
+            >
+              <ShoppingListImage src={shoppingList.image_url} />
+              <ShoppingListInfo>
+                <ShoppingListName>{shoppingList.name}</ShoppingListName>
+                <ShoppingListMeta>
+                  <Calendar size={20} />
+                  <ShoppingListMetaText>
+                    {format(new Date(shoppingList.date), 'dd/MM/yyyy')}
+                  </ShoppingListMetaText>
+                </ShoppingListMeta>
+                <ShoppingListMeta>
+                  <Info size={20} />
+                  <ShoppingListMetaText>
+                    {shoppingList.description}
+                  </ShoppingListMetaText>
+                </ShoppingListMeta>
+              </ShoppingListInfo>
+            </ShoppingListContainer>
+          ))}
+        </ShoppingLists>
+        {shoppingListItemsVisible && (
+          <ShoppingListItems>
+            <ShoppingListsTitle>Items da Lista de Compras</ShoppingListsTitle>
+          </ShoppingListItems>
+        )}
+      </ContainerData>
     </Container>
   );
 };
