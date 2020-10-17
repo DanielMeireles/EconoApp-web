@@ -1,8 +1,8 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useEffect, useState, useCallback } from 'react';
 
 import { FiPower } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
-import { format } from 'date-fns';
 
 import {
   Container,
@@ -12,14 +12,6 @@ import {
   ContainerData,
   ShoppingListsTitle,
   ShoppingLists,
-  ShoppingListContainer,
-  ShoppingListImage,
-  ShoppingListInfo,
-  ShoppingListName,
-  Calendar,
-  Info,
-  ShoppingListMeta,
-  ShoppingListMetaText,
   ShoppingListItems,
 } from './styles';
 
@@ -90,8 +82,9 @@ const Dashboard: React.FC = () => {
           <ShoppingListsTitle>Listas de Compras</ShoppingListsTitle>
           {shoppingLists.map((shoppingList) => (
             <div
-              onClick={() =>
-                setShoppingListItemsVisible(!shoppingListItemsVisible)}
+              onClickCapture={() =>
+                setShoppingListItemsVisible(!shoppingListItemsVisible)
+              }
             >
               <ShoppingListCard shoppingList={shoppingList} />
             </div>

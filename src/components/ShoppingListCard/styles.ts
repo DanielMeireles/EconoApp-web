@@ -5,6 +5,7 @@ export const ShoppingListContainer = styled.div`
   display: flex;
   flex: 1;
   flex-direction: row;
+  cursor: pointer;
   background: ${({ theme }) => theme.colors.cardBackground};
   border-radius: 10px;
   padding: 20px;
