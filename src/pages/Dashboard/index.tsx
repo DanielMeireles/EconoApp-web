@@ -30,6 +30,27 @@ export interface ShoppingList {
   image_url: string;
 }
 
+export interface Product {
+  id: string;
+  name: string;
+  brand: string;
+  description: string;
+  image_url: string;
+}
+
+export interface ShoppingListItem {
+  id: string;
+  product_id: string;
+  product: Product;
+  shoppinglist_id: string;
+  checked: boolean;
+  date: Date;
+  quantity: number;
+  value: number;
+  longitude: number;
+  latitude: number;
+}
+
 const Dashboard: React.FC = () => {
   const { signOut, user } = useAuth();
 
@@ -38,6 +59,10 @@ const Dashboard: React.FC = () => {
   const [shoppingListItemsVisible, setShoppingListItemsVisible] = useState(
     false,
   );
+
+  const [shoppingListItems, setShoppingListItems] = useState<
+    ShoppingListItem[]
+  >([]);
 
   const handleGetShoppingLists = useCallback(() => {
     api.get('/shoppinglists').then((response) => {
@@ -52,6 +77,30 @@ const Dashboard: React.FC = () => {
       );
     });
   }, []);
+
+  const handleGetShoppingListItems = useCallback(
+    (shoppingList: ShoppingList) => {
+      api
+        .get('/shoppinglistitems/findByShoppingListId', {
+          params: { shoppinglist_id: shoppingList.id },
+        })
+        .then((response) => {
+          const shoppingListItemsResponse: ShoppingListItem[] = response.data;
+          setShoppingListItems(
+            shoppingListItemsResponse.sort((a, b) => {
+              if (a.product.name > b.product.name) {
+                return 1;
+              }
+              return -1;
+            }),
+          );
+        })
+        .catch((err) => {
+          setShoppingListItems([]);
+        });
+    },
+    [],
+  );
 
   useEffect(() => {
     handleGetShoppingLists();
@@ -82,9 +131,11 @@ const Dashboard: React.FC = () => {
           <ShoppingListsTitle>Listas de Compras</ShoppingListsTitle>
           {shoppingLists.map((shoppingList) => (
             <div
-              onClickCapture={() =>
-                setShoppingListItemsVisible(!shoppingListItemsVisible)
-              }
+              key={shoppingList.id}
+              onClickCapture={() => {
+                setShoppingListItemsVisible(!shoppingListItemsVisible);
+                handleGetShoppingListItems(shoppingList);
+              }}
             >
               <ShoppingListCard shoppingList={shoppingList} />
             </div>
@@ -93,6 +144,9 @@ const Dashboard: React.FC = () => {
         {shoppingListItemsVisible && (
           <ShoppingListItems>
             <ShoppingListsTitle>Items da Lista de Compras</ShoppingListsTitle>
+            {shoppingListItems.map((shoppingListItemAux) => (
+              <ShoppingListsTitle>Items da Lista de Compras</ShoppingListsTitle>
+            ))}
           </ShoppingListItems>
         )}
       </ContainerData>
