@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { shade } from 'polished';
 
-// import signInBackgroundImg from '../../assets/sign-in-background.png';
+import backgroundImg from '../../assets/background_right.png';
 
 export const Container = styled.div`
   font-family: 'Poppins';
@@ -84,6 +84,6 @@ export const AnimationContainer = styled.div`
 
 export const Background = styled.div`
   flex: 1;
-  /*background: url() no-repeat center;*/
+  background: url(${backgroundImg}) no-repeat center;
   background-size: cover;
 `;

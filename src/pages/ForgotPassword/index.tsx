@@ -74,6 +74,7 @@ const ForgotPassword: React.FC = () => {
 
   return (
     <Container>
+      <Background />
       <Content>
         <AnimationContainer>
           <img src={logoImg} alt="EconoApp" />
@@ -94,7 +95,6 @@ const ForgotPassword: React.FC = () => {
           </Link>
         </AnimationContainer>
       </Content>
-      <Background />
     </Container>
   );
 };

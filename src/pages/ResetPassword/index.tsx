@@ -77,6 +77,7 @@ const ResetPassword: React.FC = () => {
 
   return (
     <Container>
+      <Background />
       <Content>
         <AnimationContainer>
           <img src={logoImg} alt="EconoApp" />
@@ -102,7 +103,6 @@ const ResetPassword: React.FC = () => {
           </Form>
         </AnimationContainer>
       </Content>
-      <Background />
     </Container>
   );
 };

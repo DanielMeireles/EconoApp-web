@@ -30,7 +30,6 @@ const SignIn: React.FC = () => {
   const handleSubmit = useCallback(
     async (data: SignInFormData) => {
       try {
-        console.log(process.env.REACT_APP_API_URL);
         formRef.current?.setErrors({});
 
         const schema = Yup.object().shape({
