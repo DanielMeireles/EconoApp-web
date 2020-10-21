@@ -104,7 +104,7 @@ const Dashboard: React.FC = () => {
 
   useEffect(() => {
     handleGetShoppingLists();
-  }, []);
+  }, [handleGetShoppingLists]);
 
   return (
     <Container>
