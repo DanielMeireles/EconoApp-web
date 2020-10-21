@@ -26,6 +26,7 @@ export const HeaderContent = styled.div`
     margin-left: auto;
     background: none;
     border: none;
+    cursor: pointer;
 
     svg {
       color: ${({ theme }) => theme.colors.headerTertiaryText};
@@ -42,6 +43,7 @@ export const HeaderProfile = styled.div`
     width: 56px;
     height: 56px;
     border-radius: 50%;
+    cursor: pointer;
   }
 
   div {
